@@ -18,9 +18,10 @@
 		DF030DD429EB077F006E9977 /* ProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD329EB077F006E9977 /* ProductRouter.swift */; };
 		DF030DD629EB09A4006E9977 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD529EB09A4006E9977 /* ProductManager.swift */; };
 		DF030DD829EB0F9C006E9977 /* QueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD729EB0F9C006E9977 /* QueryResponse.swift */; };
+		DF030DDA29EB2AEF006E9977 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD929EB2AEF006E9977 /* Extensions.swift */; };
 		DF7DEE7229EAF8C100813C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */; };
 		DF7DEE7429EAF8C100813C32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */; };
-		DF7DEE7629EAF8C100813C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7529EAF8C100813C32 /* ViewController.swift */; };
+		DF7DEE7629EAF8C100813C32 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7529EAF8C100813C32 /* SearchViewController.swift */; };
 		DF7DEE7929EAF8C100813C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7DEE7729EAF8C100813C32 /* Main.storyboard */; };
 		DF7DEE7B29EAF8C400813C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7DEE7A29EAF8C400813C32 /* Assets.xcassets */; };
 		DF7DEE7E29EAF8C400813C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7DEE7C29EAF8C400813C32 /* LaunchScreen.storyboard */; };
@@ -71,10 +72,11 @@
 		DF030DD329EB077F006E9977 /* ProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRouter.swift; sourceTree = "<group>"; };
 		DF030DD529EB09A4006E9977 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		DF030DD729EB0F9C006E9977 /* QueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResponse.swift; sourceTree = "<group>"; };
+		DF030DD929EB2AEF006E9977 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DF7DEE6E29EAF8C100813C32 /* MeliChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DF7DEE7529EAF8C100813C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF7DEE7529EAF8C100813C32 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DF7DEE7829EAF8C100813C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF7DEE7A29EAF8C400813C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF7DEE7D29EAF8C400813C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -135,7 +137,7 @@
 			children = (
 				DF7DEE7C29EAF8C400813C32 /* LaunchScreen.storyboard */,
 				DF7DEE7729EAF8C100813C32 /* Main.storyboard */,
-				DF7DEE7529EAF8C100813C32 /* ViewController.swift */,
+				DF7DEE7529EAF8C100813C32 /* SearchViewController.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -206,6 +208,7 @@
 				DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */,
 				DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */,
 				DF030DCD29EB0247006E9977 /* Constants.swift */,
+				DF030DD929EB2AEF006E9977 /* Extensions.swift */,
 				DF030DBB29EAFC71006E9977 /* User Interface */,
 				DF030DB929EAFC5F006E9977 /* Business Logic */,
 				DF030DBA29EAFC69006E9977 /* Data Access */,
@@ -367,8 +370,9 @@
 				DF030DD829EB0F9C006E9977 /* QueryResponse.swift in Sources */,
 				DF030DD429EB077F006E9977 /* ProductRouter.swift in Sources */,
 				DF030DD129EB0336006E9977 /* Product.swift in Sources */,
-				DF7DEE7629EAF8C100813C32 /* ViewController.swift in Sources */,
+				DF7DEE7629EAF8C100813C32 /* SearchViewController.swift in Sources */,
 				DF7DEE7229EAF8C100813C32 /* AppDelegate.swift in Sources */,
+				DF030DDA29EB2AEF006E9977 /* Extensions.swift in Sources */,
 				DF030DC929EB01D3006E9977 /* NetworkError.swift in Sources */,
 				DF7DEE7429EAF8C100813C32 /* SceneDelegate.swift in Sources */,
 				DF030DC029EAFFFD006E9977 /* ApiClient.swift in Sources */,
