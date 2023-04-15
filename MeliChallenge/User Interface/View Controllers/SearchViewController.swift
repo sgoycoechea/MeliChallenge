@@ -8,14 +8,29 @@
 import UIKit
 import SVProgressHUD
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
 
     var products: [Product]?
     var totalProducts: Int?
     
     @IBOutlet weak var searchTextField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        search()
+        return true
+    }
+    
     @IBAction func search(_ sender: Any) {
+        search()
+    }
+    
+    func search() {
         guard let query = searchTextField.text, !query.isEmpty else {
             self.showMessage(title: "Campo vacío", message: "Por favor ingrese un texto para buscar")
             return
@@ -25,6 +40,10 @@ class SearchViewController: UIViewController {
             SVProgressHUD.dismiss()
             switch result {
             case .success(let productsData):
+                guard productsData.totalProducts > 0 else {
+                    self.showMessage(title: "Búsqueda vacía", message: "No encontramos ningún producto con ese nombre")
+                    return
+                }
                 self.products = productsData.products
                 self.totalProducts = productsData.totalProducts
                 self.performSegue(withIdentifier: Constants.Segues.showProductList, sender: nil)
