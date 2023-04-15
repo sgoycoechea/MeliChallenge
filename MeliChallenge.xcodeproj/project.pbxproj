@@ -12,6 +12,12 @@
 		DF030DC329EB00D5006E9977 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF030DC229EB00D5006E9977 /* Alamofire.xcframework */; };
 		DF030DC429EB00D5006E9977 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF030DC229EB00D5006E9977 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DF030DC729EB00F8006E9977 /* SVProgressHUD.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF030DC629EB00F8006E9977 /* SVProgressHUD.xcframework */; };
+		DF030DC929EB01D3006E9977 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DC829EB01D3006E9977 /* NetworkError.swift */; };
+		DF030DCE29EB0247006E9977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DCD29EB0247006E9977 /* Constants.swift */; };
+		DF030DD129EB0336006E9977 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD029EB0336006E9977 /* Product.swift */; };
+		DF030DD429EB077F006E9977 /* ProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD329EB077F006E9977 /* ProductRouter.swift */; };
+		DF030DD629EB09A4006E9977 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD529EB09A4006E9977 /* ProductManager.swift */; };
+		DF030DD829EB0F9C006E9977 /* QueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD729EB0F9C006E9977 /* QueryResponse.swift */; };
 		DF7DEE7229EAF8C100813C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */; };
 		DF7DEE7429EAF8C100813C32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */; };
 		DF7DEE7629EAF8C100813C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7529EAF8C100813C32 /* ViewController.swift */; };
@@ -59,6 +65,12 @@
 		DF030DBF29EAFFFD006E9977 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		DF030DC229EB00D5006E9977 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		DF030DC629EB00F8006E9977 /* SVProgressHUD.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SVProgressHUD.xcframework; path = Carthage/Build/SVProgressHUD.xcframework; sourceTree = "<group>"; };
+		DF030DC829EB01D3006E9977 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		DF030DCD29EB0247006E9977 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DF030DD029EB0336006E9977 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		DF030DD329EB077F006E9977 /* ProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRouter.swift; sourceTree = "<group>"; };
+		DF030DD529EB09A4006E9977 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
+		DF030DD729EB0F9C006E9977 /* QueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResponse.swift; sourceTree = "<group>"; };
 		DF7DEE6E29EAF8C100813C32 /* MeliChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +116,7 @@
 		DF030DB929EAFC5F006E9977 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				DF030DD529EB09A4006E9977 /* ProductManager.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 		DF030DBA29EAFC69006E9977 /* Data Access */ = {
 			isa = PBXGroup;
 			children = (
+				DF030DCF29EB0321006E9977 /* Models */,
 				DF030DBC29EAFC7E006E9977 /* Network */,
 			);
 			path = "Data Access";
@@ -119,6 +133,9 @@
 		DF030DBB29EAFC71006E9977 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				DF7DEE7C29EAF8C400813C32 /* LaunchScreen.storyboard */,
+				DF7DEE7729EAF8C100813C32 /* Main.storyboard */,
+				DF7DEE7529EAF8C100813C32 /* ViewController.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -126,8 +143,11 @@
 		DF030DBC29EAFC7E006E9977 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DF030DD229EB0770006E9977 /* Routes */,
 				DF030DBD29EAFFDE006E9977 /* RequestFactory.swift */,
 				DF030DBF29EAFFFD006E9977 /* ApiClient.swift */,
+				DF030DC829EB01D3006E9977 /* NetworkError.swift */,
+				DF030DD729EB0F9C006E9977 /* QueryResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -139,6 +159,22 @@
 				DF030DC229EB00D5006E9977 /* Alamofire.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF030DCF29EB0321006E9977 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF030DD029EB0336006E9977 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF030DD229EB0770006E9977 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				DF030DD329EB077F006E9977 /* ProductRouter.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 		DF7DEE6529EAF8C100813C32 = {
@@ -165,16 +201,14 @@
 		DF7DEE7029EAF8C100813C32 /* MeliChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				DF030DBB29EAFC71006E9977 /* User Interface */,
-				DF030DBA29EAFC69006E9977 /* Data Access */,
-				DF030DB929EAFC5F006E9977 /* Business Logic */,
+				DF7DEE7A29EAF8C400813C32 /* Assets.xcassets */,
+				DF7DEE7F29EAF8C400813C32 /* Info.plist */,
 				DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */,
 				DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */,
-				DF7DEE7529EAF8C100813C32 /* ViewController.swift */,
-				DF7DEE7729EAF8C100813C32 /* Main.storyboard */,
-				DF7DEE7A29EAF8C400813C32 /* Assets.xcassets */,
-				DF7DEE7C29EAF8C400813C32 /* LaunchScreen.storyboard */,
-				DF7DEE7F29EAF8C400813C32 /* Info.plist */,
+				DF030DCD29EB0247006E9977 /* Constants.swift */,
+				DF030DBB29EAFC71006E9977 /* User Interface */,
+				DF030DB929EAFC5F006E9977 /* Business Logic */,
+				DF030DBA29EAFC69006E9977 /* Data Access */,
 			);
 			path = MeliChallenge;
 			sourceTree = "<group>";
@@ -329,10 +363,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF030DBE29EAFFDE006E9977 /* RequestFactory.swift in Sources */,
+				DF030DD629EB09A4006E9977 /* ProductManager.swift in Sources */,
+				DF030DD829EB0F9C006E9977 /* QueryResponse.swift in Sources */,
+				DF030DD429EB077F006E9977 /* ProductRouter.swift in Sources */,
+				DF030DD129EB0336006E9977 /* Product.swift in Sources */,
 				DF7DEE7629EAF8C100813C32 /* ViewController.swift in Sources */,
 				DF7DEE7229EAF8C100813C32 /* AppDelegate.swift in Sources */,
+				DF030DC929EB01D3006E9977 /* NetworkError.swift in Sources */,
 				DF7DEE7429EAF8C100813C32 /* SceneDelegate.swift in Sources */,
 				DF030DC029EAFFFD006E9977 /* ApiClient.swift in Sources */,
+				DF030DCE29EB0247006E9977 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
