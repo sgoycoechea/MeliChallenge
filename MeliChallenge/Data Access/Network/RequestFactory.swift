@@ -13,7 +13,7 @@ class RequestFactory: NSObject {
     // MARK: - Private Methods
     
     private static func generateURLRequest(path: String, httpMethod: HTTPMethod, body: [String: Any]?, contentType: String) -> URLRequest {
-        var request = try! URLRequest(url: "https://" + Constants.serverIp + "/" + path, method: httpMethod)
+        var request = try! URLRequest(url: "https://" + Constants.Networking.serverIp + "/" + path, method: httpMethod)
         if let body = body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body)
         }
@@ -25,7 +25,7 @@ class RequestFactory: NSObject {
     public static func generateRequest(path: String, httpMethod: HTTPMethod, body: [String: Any]?, contentType: String) -> DataRequest {
         guard httpMethod != .get || body == nil else {
             // Alamofire doesn't allow GET requests with body
-            return AF.request("https://" + Constants.serverIp + "/sites/" + Constants.siteId + "/" + path,
+            return AF.request("https://" + Constants.Networking.serverIp + "/sites/" + Constants.Networking.siteId + "/" + path,
                               method: httpMethod,
                               parameters: body,
                               encoding: URLEncoding())

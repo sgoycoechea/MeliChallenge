@@ -10,6 +10,9 @@ import SVProgressHUD
 
 class SearchViewController: UIViewController {
 
+    var products: [Product]?
+    var totalProducts: Int?
+    
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBAction func search(_ sender: Any) {
@@ -21,11 +24,24 @@ class SearchViewController: UIViewController {
         ProductManager.search(query: query) { result in
             SVProgressHUD.dismiss()
             switch result {
-            case .success:
-                print("show products")
+            case .success(let productsData):
+                self.products = productsData.products
+                self.totalProducts = productsData.totalProducts
+                self.performSegue(withIdentifier: Constants.Segues.showProductList, sender: nil)
             case .failure:
                 self.showMessage(title: "Error", message: "Lo sentimos, ha ocurrido un error inesperado")
             }
+        }
+    }
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == Constants.Segues.showProductList {
+            let productsTableViewController = segue.destination as! ProductsTableViewController
+            productsTableViewController.products = products
+            productsTableViewController.totalProducts = totalProducts
         }
     }
 }

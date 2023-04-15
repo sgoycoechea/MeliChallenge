@@ -11,6 +11,7 @@ struct Product: Codable {
     let id: String
     let title: String?
     let condition: String?
+    let thumbnail: String?
     let currencyId: String?
     let price: Float?
     let soldQuantity: Int?
@@ -19,6 +20,7 @@ struct Product: Codable {
         case id = "id"
         case title = "title"
         case condition = "condition"
+        case thumbnail = "thumbnail"
         case currencyId = "currency_id"
         case price = "price"
         case soldQuantity = "sold_quantity"

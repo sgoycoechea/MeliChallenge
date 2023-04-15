@@ -8,7 +8,7 @@
 import Foundation
 
 class ProductManager {
-    static func search(query: String, completion: @escaping (Result<[Product], NetworkError>) -> Void) {
+    static func search(query: String, completion: @escaping (Result<ProductsData, NetworkError>) -> Void) {
         APIClient.searchProducts(query: query, completion: completion)
     }
 }

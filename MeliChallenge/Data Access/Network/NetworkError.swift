@@ -26,10 +26,11 @@ class NetworkError: NSError {
     var message: String = ""
     
     init(error: NSError?) {
-        super.init(domain: "", code: error?.code ?? StatusCode.unknown.rawValue, userInfo: [NSLocalizedDescriptionKey: error?.localizedDescription ?? Constants.unknownError])
+        super.init(domain: "", code: error?.code ?? StatusCode.unknown.rawValue,
+                   userInfo: [NSLocalizedDescriptionKey: error?.localizedDescription ?? Constants.Errors.unknownError])
         
-        self.message = error?.localizedDescription ?? Constants.unknownError
-        self.title = Constants.serverError
+        self.message = error?.localizedDescription ?? Constants.Errors.unknownError
+        self.title = Constants.Errors.serverError
     }
     
     required init?(coder aDecoder: NSCoder) {

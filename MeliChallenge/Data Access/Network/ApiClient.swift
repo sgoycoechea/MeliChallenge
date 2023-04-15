@@ -11,13 +11,13 @@ import Alamofire
 class APIClient {
 
     // MARK: - Product Methods
-    static func searchProducts(query: String, completion: @escaping (Result<[Product], NetworkError>) -> Void) {
+    static func searchProducts(query: String, completion: @escaping (Result<ProductsData, NetworkError>) -> Void) {
         let concreteRequest = ProductRouter.search(query: query).obtainRequest()
         concreteRequest.responseDecodable { (response: AFDataResponse<QueryResponse<Product>>) in
             handleDecodableResponse(response: response) { result in
                 switch result {
                 case .success(let queryResponse):
-                    completion(.success(queryResponse.results))
+                    completion(.success(ProductsData(products: queryResponse.results, totalProducts: queryResponse.paging.total)))
                 case .failure(let error):
                     completion(.failure(error))
                 }
