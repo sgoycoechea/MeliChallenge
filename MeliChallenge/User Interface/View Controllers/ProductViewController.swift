@@ -27,7 +27,7 @@ class ProductViewController: UIViewController {
         if segue.identifier == Constants.Segues.embedCarouselViewController {
             let carouselViewController = segue.destination as! CarouselPageViewController
             guard let pictures = product.pictures else { return }
-            carouselViewController.pictureUrls = pictures.map({ $0.secureUrl ?? $0.url ?? ""})
+            carouselViewController.pictureUrls = pictures.map({ $0.secureUrl ?? $0.url ?? "" })
         }
     }
 }

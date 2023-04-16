@@ -24,6 +24,7 @@ class ProductsTableViewController: UITableViewController {
     var isPaginationOn: Bool = false
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         isPaginationOn = true
     }
     
@@ -42,7 +43,6 @@ class ProductsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
             guard let countCell = tableView.dequeueReusableCell(withIdentifier: CellKeys.countCell, for: indexPath) as? CountCell else {
                 fatalError(Constants.Errors.cellError + CellKeys.countCell)

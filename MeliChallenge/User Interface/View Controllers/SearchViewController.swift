@@ -21,17 +21,21 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         searchTextField.delegate = self
     }
     
+    @IBAction func search(_ sender: Any) {
+        search()
+    }
+    
+    // MARK: - UITextFieldDelegate
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         search()
         return true
     }
     
-    @IBAction func search(_ sender: Any) {
-        search()
-    }
+    // MARK: - Private methods
     
-    func search() {
+    private func search() {
         guard let query = searchTextField.text, !query.isEmpty else {
             self.showMessage(title: "Campo vacío", message: "Por favor ingrese un texto para buscar")
             return

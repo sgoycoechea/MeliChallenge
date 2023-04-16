@@ -8,12 +8,12 @@
 import Foundation
 
 struct SearchResponse: Codable {
-    let site_id: String
+    let siteId: String
     let results: [Product]
     let paging: PagingData
     
     enum CodingKeys: String, CodingKey {
-        case site_id = "site_id"
+        case siteId = "site_id"
         case results = "results"
         case paging = "paging"
     }

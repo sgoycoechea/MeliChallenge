@@ -17,7 +17,8 @@ class APIClient {
             handleDecodableResponse(response: response) { result in
                 switch result {
                 case .success(let queryResponse):
-                    completion(.success(ProductsData(products: queryResponse.results, totalProducts: queryResponse.paging.total)))
+                    let productsData = ProductsData(products: queryResponse.results, totalProducts: queryResponse.paging.total)
+                    completion(.success(productsData))
                 case .failure(let error):
                     completion(.failure(error))
                 }
@@ -34,7 +35,8 @@ class APIClient {
                     guard queryResponse.count == 1,
                           queryResponse[0].code == StatusCode.ok.rawValue,
                     let product = queryResponse[0].product else {
-                        completion(.failure(NetworkError(error: StatusCode(rawValue: queryResponse[0].code) ?? StatusCode.unknown)))
+                        let error = NetworkError(error: StatusCode(rawValue: queryResponse[0].code) ?? StatusCode.unknown)
+                        completion(.failure(error))
                         return
                     }
                     completion(.success(product))
