@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 private struct CellKeys {
     static let productCell = "productCell"
@@ -16,6 +17,7 @@ class ProductsTableViewController: UITableViewController {
 
     var products: [Product]!
     var totalProducts: Int!
+    var selectedProduct: Product?
     
     // MARK: - Table view data source
 
@@ -50,11 +52,36 @@ class ProductsTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section == 1 else { return }
+        getProductAndShowDetails(id: products[indexPath.row].id)
+    }
+    
+    // MARK: - Private methods
+    
+    private func getProductAndShowDetails(id: String) {
+        SVProgressHUD.show()
+        ProductManager.getProduct(with: id) { result in
+            SVProgressHUD.dismiss()
+            switch result {
+            case .success(let product):
+                self.selectedProduct = product
+                self.performSegue(withIdentifier: Constants.Segues.showProduct, sender: self.tableView)
+            case .failure:
+                self.showMessage(title: Constants.Errors.error, message: Constants.Errors.unexpectedError)
+            }
+        }
+    }
+    
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        if segue.identifier == Constants.Segues.showProduct {
+            let productViewController = segue.destination as! ProductViewController
+            productViewController.product = selectedProduct
+        }
     }
     
 }

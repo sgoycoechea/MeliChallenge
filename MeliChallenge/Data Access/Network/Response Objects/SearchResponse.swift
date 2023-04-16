@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct QueryResponse<T: Codable>: Codable {
+struct SearchResponse: Codable {
     let site_id: String
-    let results: [T]
+    let results: [Product]
     let paging: PagingData
     
     enum CodingKeys: String, CodingKey {

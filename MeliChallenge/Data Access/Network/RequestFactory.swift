@@ -22,16 +22,21 @@ class RequestFactory: NSObject {
     
     // MARK: - Public Methods
     
-    public static func generateRequest(path: String, httpMethod: HTTPMethod, body: [String: Any]?, contentType: String) -> DataRequest {
+    public static func generateRequest(path: String, httpMethod: HTTPMethod, body: [String: Any]?, useSiteId: Bool, contentType: String) -> DataRequest {
+        var domain = "https://" + Constants.Networking.serverIp
+        if useSiteId {
+            domain += "/sites/" + Constants.Networking.siteId
+        }
+        
         guard httpMethod != .get || body == nil else {
             // Alamofire doesn't allow GET requests with body
-            return AF.request("https://" + Constants.Networking.serverIp + "/sites/" + Constants.Networking.siteId + "/" + path,
+            return AF.request(domain + "/" + path,
                               method: httpMethod,
                               parameters: body,
                               encoding: URLEncoding())
-    }
+        }
         
-        let urlRequest = generateURLRequest(path: path, httpMethod: httpMethod, body: body, contentType: contentType)
+        let urlRequest = generateURLRequest(path: domain + "/" + path, httpMethod: httpMethod, body: body, contentType: contentType)
         
         return AF.request(urlRequest)
     }

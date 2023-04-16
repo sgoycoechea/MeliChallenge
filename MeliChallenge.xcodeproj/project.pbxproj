@@ -17,12 +17,15 @@
 		DF030DD129EB0336006E9977 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD029EB0336006E9977 /* Product.swift */; };
 		DF030DD429EB077F006E9977 /* ProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD329EB077F006E9977 /* ProductRouter.swift */; };
 		DF030DD629EB09A4006E9977 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD529EB09A4006E9977 /* ProductManager.swift */; };
-		DF030DD829EB0F9C006E9977 /* QueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD729EB0F9C006E9977 /* QueryResponse.swift */; };
+		DF030DD829EB0F9C006E9977 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD729EB0F9C006E9977 /* SearchResponse.swift */; };
 		DF030DDA29EB2AEF006E9977 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD929EB2AEF006E9977 /* Extensions.swift */; };
 		DF030DDE29EB30F2006E9977 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DDD29EB30F2006E9977 /* ProductsTableViewController.swift */; };
 		DF030DE229EB34EA006E9977 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DE129EB34EA006E9977 /* ProductCell.swift */; };
 		DF030DE629EB51AA006E9977 /* ProductsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DE529EB51AA006E9977 /* ProductsData.swift */; };
 		DF030DE829EB534F006E9977 /* CountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DE729EB534F006E9977 /* CountCell.swift */; };
+		DF030DEA29EC1B85006E9977 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DE929EC1B85006E9977 /* ProductViewController.swift */; };
+		DF030DED29EC2151006E9977 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DEC29EC2151006E9977 /* ProductResponse.swift */; };
+		DF030DEF29EC2EBB006E9977 /* CarouselPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DEE29EC2EBB006E9977 /* CarouselPageViewController.swift */; };
 		DF7DEE7229EAF8C100813C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */; };
 		DF7DEE7429EAF8C100813C32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */; };
 		DF7DEE7629EAF8C100813C32 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DEE7529EAF8C100813C32 /* SearchViewController.swift */; };
@@ -75,12 +78,15 @@
 		DF030DD029EB0336006E9977 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DF030DD329EB077F006E9977 /* ProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRouter.swift; sourceTree = "<group>"; };
 		DF030DD529EB09A4006E9977 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
-		DF030DD729EB0F9C006E9977 /* QueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResponse.swift; sourceTree = "<group>"; };
+		DF030DD729EB0F9C006E9977 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		DF030DD929EB2AEF006E9977 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DF030DDD29EB30F2006E9977 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		DF030DE129EB34EA006E9977 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		DF030DE529EB51AA006E9977 /* ProductsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsData.swift; sourceTree = "<group>"; };
 		DF030DE729EB534F006E9977 /* CountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountCell.swift; sourceTree = "<group>"; };
+		DF030DE929EC1B85006E9977 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		DF030DEC29EC2151006E9977 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
+		DF030DEE29EC2EBB006E9977 /* CarouselPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselPageViewController.swift; sourceTree = "<group>"; };
 		DF7DEE6E29EAF8C100813C32 /* MeliChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7DEE7129EAF8C100813C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF7DEE7329EAF8C100813C32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,11 +160,11 @@
 		DF030DBC29EAFC7E006E9977 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DF030DEB29EC212F006E9977 /* Response Objects */,
 				DF030DD229EB0770006E9977 /* Routes */,
 				DF030DBD29EAFFDE006E9977 /* RequestFactory.swift */,
 				DF030DBF29EAFFFD006E9977 /* ApiClient.swift */,
 				DF030DC829EB01D3006E9977 /* NetworkError.swift */,
-				DF030DD729EB0F9C006E9977 /* QueryResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -194,6 +200,8 @@
 			children = (
 				DF7DEE7529EAF8C100813C32 /* SearchViewController.swift */,
 				DF030DDD29EB30F2006E9977 /* ProductsTableViewController.swift */,
+				DF030DE929EC1B85006E9977 /* ProductViewController.swift */,
+				DF030DEE29EC2EBB006E9977 /* CarouselPageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -205,6 +213,15 @@
 				DF030DE729EB534F006E9977 /* CountCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DF030DEB29EC212F006E9977 /* Response Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DF030DD729EB0F9C006E9977 /* SearchResponse.swift */,
+				DF030DEC29EC2151006E9977 /* ProductResponse.swift */,
+			);
+			path = "Response Objects";
 			sourceTree = "<group>";
 		};
 		DF7DEE6529EAF8C100813C32 = {
@@ -397,7 +414,10 @@
 				DF030DE629EB51AA006E9977 /* ProductsData.swift in Sources */,
 				DF030DD629EB09A4006E9977 /* ProductManager.swift in Sources */,
 				DF030DE829EB534F006E9977 /* CountCell.swift in Sources */,
-				DF030DD829EB0F9C006E9977 /* QueryResponse.swift in Sources */,
+				DF030DEF29EC2EBB006E9977 /* CarouselPageViewController.swift in Sources */,
+				DF030DEA29EC1B85006E9977 /* ProductViewController.swift in Sources */,
+				DF030DD829EB0F9C006E9977 /* SearchResponse.swift in Sources */,
+				DF030DED29EC2151006E9977 /* ProductResponse.swift in Sources */,
 				DF030DD429EB077F006E9977 /* ProductRouter.swift in Sources */,
 				DF030DD129EB0336006E9977 /* Product.swift in Sources */,
 				DF030DE229EB34EA006E9977 /* ProductCell.swift in Sources */,

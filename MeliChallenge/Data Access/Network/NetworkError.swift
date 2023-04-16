@@ -33,6 +33,12 @@ class NetworkError: NSError {
         self.title = Constants.Errors.serverError
     }
     
+    init(error: StatusCode) {
+        super.init(domain: "", code: error.rawValue)
+        self.message = Constants.Errors.unknownError
+        self.title = Constants.Errors.serverError
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -10,10 +10,11 @@ import Alamofire
 
 public enum ProductRouter {
     case search(query: String)
+    case getProduct(id: String)
     
     var method: HTTPMethod {
         switch self {
-        case .search:
+        case .search, .getProduct:
             return .get
         }
     }
@@ -22,6 +23,8 @@ public enum ProductRouter {
         switch self {
         case .search:
             return "search"
+        case .getProduct:
+            return "items"
         }
     }
     
@@ -29,10 +32,21 @@ public enum ProductRouter {
         switch self {
         case .search(let query):
             return ["q": query]
+        case .getProduct(let id):
+            return ["ids": id]
+        }
+    }
+    
+    var useSiteId: Bool {
+        switch self {
+        case .search:
+            return true
+        case .getProduct:
+            return false
         }
     }
     
     public func obtainRequest() -> DataRequest {
-        return RequestFactory.generateRequest(path: path, httpMethod: method, body: parameters, contentType: "application/json")
+        return RequestFactory.generateRequest(path: path, httpMethod: method, body: parameters, useSiteId: useSiteId, contentType: "application/json")
     }
 }

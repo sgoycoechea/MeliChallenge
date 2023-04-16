@@ -15,6 +15,7 @@ struct Product: Codable {
     let currencyId: String?
     let price: Float?
     let soldQuantity: Int?
+    let pictures: [Picture]?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -24,5 +25,18 @@ struct Product: Codable {
         case currencyId = "currency_id"
         case price = "price"
         case soldQuantity = "sold_quantity"
+        case pictures = "pictures"
+    }
+}
+
+struct Picture: Codable {
+    let id: String
+    let url: String?
+    let secureUrl: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case url = "url"
+        case secureUrl = "secure_url"
     }
 }

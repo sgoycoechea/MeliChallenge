@@ -48,7 +48,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                 self.totalProducts = productsData.totalProducts
                 self.performSegue(withIdentifier: Constants.Segues.showProductList, sender: nil)
             case .failure:
-                self.showMessage(title: "Error", message: "Lo sentimos, ha ocurrido un error inesperado")
+                self.showMessage(title: Constants.Errors.error, message: Constants.Errors.unexpectedError)
             }
         }
     }
