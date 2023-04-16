@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		DF030DBE29EAFFDE006E9977 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DBD29EAFFDE006E9977 /* RequestFactory.swift */; };
 		DF030DC029EAFFFD006E9977 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DBF29EAFFFD006E9977 /* ApiClient.swift */; };
-		DF030DC329EB00D5006E9977 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF030DC229EB00D5006E9977 /* Alamofire.xcframework */; };
-		DF030DC429EB00D5006E9977 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF030DC229EB00D5006E9977 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF030DC729EB00F8006E9977 /* SVProgressHUD.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF030DC629EB00F8006E9977 /* SVProgressHUD.xcframework */; };
 		DF030DC929EB01D3006E9977 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DC829EB01D3006E9977 /* NetworkError.swift */; };
 		DF030DCE29EB0247006E9977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DCD29EB0247006E9977 /* Constants.swift */; };
 		DF030DD129EB0336006E9977 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF030DD029EB0336006E9977 /* Product.swift */; };
@@ -54,25 +51,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		DF030DC529EB00D5006E9977 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DF030DC429EB00D5006E9977 /* Alamofire.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		DF030DBD29EAFFDE006E9977 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		DF030DBF29EAFFFD006E9977 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		DF030DC229EB00D5006E9977 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
-		DF030DC629EB00F8006E9977 /* SVProgressHUD.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SVProgressHUD.xcframework; path = Carthage/Build/SVProgressHUD.xcframework; sourceTree = "<group>"; };
 		DF030DC829EB01D3006E9977 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DF030DCD29EB0247006E9977 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DF030DD029EB0336006E9977 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -107,8 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF030DC329EB00D5006E9977 /* Alamofire.xcframework in Frameworks */,
-				DF030DC729EB00F8006E9977 /* SVProgressHUD.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +151,6 @@
 		DF030DC129EB00D5006E9977 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF030DC629EB00F8006E9977 /* SVProgressHUD.xcframework */,
-				DF030DC229EB00D5006E9977 /* Alamofire.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -288,7 +265,6 @@
 				DF7DEE6A29EAF8C100813C32 /* Sources */,
 				DF7DEE6B29EAF8C100813C32 /* Frameworks */,
 				DF7DEE6C29EAF8C100813C32 /* Resources */,
-				DF030DC529EB00D5006E9977 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
