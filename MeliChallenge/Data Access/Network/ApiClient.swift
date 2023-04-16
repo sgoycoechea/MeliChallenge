@@ -11,8 +11,8 @@ import Alamofire
 class APIClient {
 
     // MARK: - Product Methods
-    static func searchProducts(query: String, completion: @escaping (Result<ProductsData, NetworkError>) -> Void) {
-        let concreteRequest = ProductRouter.search(query: query).obtainRequest()
+    static func searchProducts(query: String, offset: Int = 0, completion: @escaping (Result<ProductsData, NetworkError>) -> Void) {
+        let concreteRequest = ProductRouter.search(query: query, offset: offset).obtainRequest()
         concreteRequest.responseDecodable { (response: AFDataResponse<SearchResponse>) in
             handleDecodableResponse(response: response) { result in
                 switch result {

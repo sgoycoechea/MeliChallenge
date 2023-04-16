@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 public enum ProductRouter {
-    case search(query: String)
+    case search(query: String, offset: Int)
     case getProduct(id: String)
     
     var method: HTTPMethod {
@@ -30,8 +30,8 @@ public enum ProductRouter {
     
     var parameters: [String: Any]? {
         switch self {
-        case .search(let query):
-            return ["q": query]
+        case .search(let query, let offset):
+            return ["q": query, "offset": offset]
         case .getProduct(let id):
             return ["ids": id]
         }

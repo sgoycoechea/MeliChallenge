@@ -11,6 +11,7 @@ import SVProgressHUD
 class SearchViewController: UIViewController, UITextFieldDelegate {
 
     var products: [Product]?
+    var query: String?
     var totalProducts: Int?
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -35,6 +36,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             self.showMessage(title: "Campo vacío", message: "Por favor ingrese un texto para buscar")
             return
         }
+        self.query = query
         SVProgressHUD.show()
         ProductManager.search(query: query) { result in
             SVProgressHUD.dismiss()
@@ -61,6 +63,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             let productsTableViewController = segue.destination as! ProductsTableViewController
             productsTableViewController.products = products
             productsTableViewController.totalProducts = totalProducts
+            productsTableViewController.query = query
         }
     }
 }

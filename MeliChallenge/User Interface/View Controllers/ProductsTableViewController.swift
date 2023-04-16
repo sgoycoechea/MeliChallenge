@@ -15,9 +15,17 @@ private struct CellKeys {
 
 class ProductsTableViewController: UITableViewController {
 
+    var query: String!
     var products: [Product]!
     var totalProducts: Int!
     var selectedProduct: Product?
+    var isLoading: Bool = false
+    var isFullyLoaded: Bool = false
+    var isPaginationOn: Bool = false
+    
+    override func viewDidAppear(_ animated: Bool) {
+        isPaginationOn = true
+    }
     
     // MARK: - Table view data source
 
@@ -57,6 +65,16 @@ class ProductsTableViewController: UITableViewController {
         getProductAndShowDetails(id: products[indexPath.row].id)
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        let contentSize = tableView.contentSize.height
+        let frameSize = scrollView.frame.size.height
+        let distanceToStartLoading = 50
+        if position > contentSize  - CGFloat(distanceToStartLoading) - frameSize {
+            loadMoreData()
+        }
+    }
+    
     // MARK: - Private methods
     
     private func getProductAndShowDetails(id: String) {
@@ -69,6 +87,34 @@ class ProductsTableViewController: UITableViewController {
                 self.performSegue(withIdentifier: Constants.Segues.showProduct, sender: self.tableView)
             case .failure:
                 self.showMessage(title: Constants.Errors.error, message: Constants.Errors.unexpectedError)
+            }
+        }
+    }
+    
+    func loadMoreData() {
+        guard isPaginationOn && !isLoading && !isFullyLoaded else { return }
+        isLoading = true
+        
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
+            let offset = self.products.count
+            ProductManager.search(query: self.query, offset: offset) { result in
+                switch result {
+                case .success(let productsData):
+                    guard productsData.products.count > 0 else {
+                        self.isLoading = false
+                        self.isFullyLoaded = true
+                        return
+                    }
+                    self.products.append(contentsOf: productsData.products)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.isLoading = false
+                    }
+                case .failure:
+                    self.isLoading = false
+                    print("Failed to load more products")
+                }
             }
         }
     }
